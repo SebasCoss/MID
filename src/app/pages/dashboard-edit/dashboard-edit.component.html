@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-tab-group mat-align-tabs="start">
+                <mat-tab label="Paso 1">
+                    <div class="row m-4">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="receptor">Nombre:</label>
+                                <input type="text" id="receptor" name="nombre" class="form-control" [(ngModel)]="graficaModel.nombre">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-block" (click)="crearGrafica()">Crear Gráfica</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="tipo_grafica">Tipo de gráfica</label>
+                                <select class="form-control" id="tipo_grafica" [(ngModel)]="graficaModel.tipo">
+                                  <option value="bar">Barras</option>
+                                  <option value="dona">Dona</option>
+                                  <option value="pie">Pie</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="dividir_por">Dividir por:</label>
+                                <select class="form-control" id="dividir" name="dividir" [(ngModel)]="graficaModel.dividir_por">
+                                  <option value="Anios">Años</option>
+                                  <option value="Meses">Meses</option>
+                                  <option value="Semanas">Semanas</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="receptor">Receptor:</label>
+                                <input type="text" id="receptor" name="receptor" class="form-control">
+                            </div>
+                        </div> -->
+                    </div>
+                </mat-tab>
+                <mat-tab label="Paso 2" [disabled]="disabledTab">
+                    <div class="row m-4">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="receptor">Receptor:</label>
+                                <input type="text" id="receptor" name="receptor" class="form-control" [(ngModel)]="datosEtiquetaModel.receptor">
+                            </div>
+                            <div class="form-group">
+                                <label for="etiqueta">Nombre Etiqueta:</label>
+                                <input type="text" id="etiqueta" name="etiqueta" class="form-control" [(ngModel)]="etiquetaModel.nombre">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="fecha_inicial">Fecha inical:</label>
+                                <input type="date" id="fecha_inicial" name="fecha_inicial" class="form-control" [(ngModel)]="datosEtiquetaModel.fechaInicial">
+                            </div>
+                            <div class="form-group">
+                                <label for="etiqueta">Color:</label>
+                                <input type="color" id="color" name="color" class="form-control" [(ngModel)]="etiquetaModel.color">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="fecha_final">Fecha final:</label>
+                                <input type="date" id="fecha_final" name="fecha_final" class="form-control" [(ngModel)]="datosEtiquetaModel.fechaFinal">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-block" (click)="crearEtiqueta()">Agregar Etiqueta</button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Gráfica de linea</h5>
+                            <app-bar></app-bar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
